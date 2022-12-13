@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Карта{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/map-page-style.css' %}">
+{% endblock %}
+{% block page_content %}
+    <h1>Карта</h1>
+    <div class="map">{{ the_map|safe }}</div>
+{% endblock %}

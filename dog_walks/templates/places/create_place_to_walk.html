@@ -1,0 +1,43 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/forms-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/bluebuttons-style.css' %}">
+{% endblock %}
+{% block title %}Добави място за разходка{% endblock %}
+
+{% block page_content %}
+    <div id="read-rules">
+        <h2>Преди да създадете място, моля прочетете</h2>
+        <a href="{% url 'terms and conditions' %}#create-walk">
+            Създаване на място за разходка
+        </a>
+    </div>
+    <div class="form-content">
+        <h2>Добавяне на място за разходка достъпно за кучета</h2>
+        <form novalidate method="post" action="{% url 'create place to walk' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <p style="color: red">
+                {% for error in form.non_field_errors %}
+                    {{ error }}
+                {% endfor %}
+            </p>
+            {% for field in form %}
+                {% if field.errors %}
+                    {{ field.errors }}
+                {% endif %}
+                <div class="user-box">
+                    {{ field }}
+                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                </div>
+            {% endfor %}
+            <button class="bluebutton" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Създай
+            </button>
+        </form>
+    </div>
+{% endblock %}

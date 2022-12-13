@@ -1,0 +1,33 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/forms-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/bluebuttons-style.css' %}">
+{% endblock %}
+{% block title %}Регистрация{% endblock %}
+{% block page_content %}
+    <div class="form-content">
+        <h2>Редактиране</h2>
+        <form method="post" action="{% url 'edit eat' pk=object.pk %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            {% for field in form %}
+                {% if field.errors %}
+                    <div style="margin-bottom: 60px;">
+                        {{ field.errors }}
+                    </div>
+                {% endif %}
+                <div class="user-box">
+                {{ field }}
+                <label>{{ field.label }}</label>
+            {% endfor %}
+            </div>
+            <button class="bluebutton" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Редактиране
+            </button>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,53 @@
+
+#content {
+    list-style: none;
+    text-align: center;
+}
+
+.content-uls {
+    list-style: disclosure-closed;
+}
+
+h1 {
+    text-align: center;
+}
+
+#content li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+    margin: 0 10px;
+}
+
+#content li a:hover {
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #3586ff,
+    0 0 20px #3586ff,
+    0 0 20px #3586ff,
+    0 0 20px #3586ff;
+}
+
+h2, p {
+    text-align: center;
+}
+
+p {
+    width: 80%;
+    margin-left: 10%;
+    font-size: 20px;
+}
+
+
+.content-uls li, #content li {
+    width: 80%;
+    margin-left: 10%;
+    font-size: 18px;
+}
+
+.contact-us-p a {
+    text-decoration: none;
+    color: #3586ff;
+}

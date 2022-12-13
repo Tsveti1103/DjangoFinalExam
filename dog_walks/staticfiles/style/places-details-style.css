@@ -1,0 +1,209 @@
+.image-container h1 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.likes {
+    font-size: 20px;
+    color: #3586ff;
+}
+
+.addComments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+
+.addComments label {
+    display: none;
+}
+
+.addComments button {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-transform: uppercase;
+    background: black;
+    border-radius: 5px;
+    border: 0;
+}
+
+.place-details h1 {
+    text-align: center;
+    font-size: 35px;
+
+}
+
+.place-details ul {
+    float: left;
+    margin-left: 15%;
+    width: fit-content;
+    padding: 0;
+}
+
+.place-details img {
+    border-radius: 20px;
+    margin-left: 5%;
+    margin-top: 16px;
+    width: 350px;
+    height: 250px;
+}
+
+.place-details li {
+    font-size: 15px;
+    display: table-row;
+}
+
+.place-details li strong {
+    padding: 5px 10px 5px 0;
+    white-space: nowrap;
+    width: auto;
+}
+
+.place-details li span {
+    padding: 5px 0;
+}
+
+.place-details li span, .place-details li strong {
+    border-bottom: 1px solid #ddd;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.place-details li span a {
+    color: #3586ff;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.place-description {
+    margin-top: 7%;
+}
+
+.place-description h2 {
+    text-align: center;
+}
+
+.place-description p {
+    width: 50%;
+    text-align: center;
+    margin-left: 25%;
+}
+
+
+@media only screen and (max-width: 800px) {
+    .place-container {
+        width: 100%;
+        padding: 0;
+    }
+
+    .place-details ul {
+        margin: 0;
+    }
+
+    .place-details img {
+        margin: 0;
+    }
+
+    .notice {
+        margin-bottom: 15%;
+    }
+
+    .comments ul {
+        padding: 0;
+        width: 100%
+    }
+}
+
+.comments, .comments .profile-data {
+    margin-bottom: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.comments img {
+    width: 70px;
+    border-radius: 20px;
+    height: 70px;
+}
+
+.comments ul {
+    display: inline-block;
+    text-align: left;
+    list-style: none;
+}
+
+.comment-text span {
+    text-align: right !Important;
+    display: block;
+    color: darkgray;
+}
+
+.comments .comment-username {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.profile-data {
+    border-style: outset;
+}
+
+.comments .comment-text {
+    text-align: center;
+    width: 350px;
+}
+
+.buttons-container {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.buttons-container a i {
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: xx-large;
+    color: #111;
+}
+
+.buttons-container a .fa-heart {
+    color: red;
+}
+
+.buttons-container a .fa-heart:hover {
+    font-weight: 600;
+    color: red;
+}
+
+.buttons-container a i:hover {
+    border-radius: 5px;
+    color: blue;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+.notice {
+    color: red;
+    text-align: center;
+    width: 40%;
+    position: relative;
+    left: 30%;
+    font-size: 15px;
+    background-color: bisque;
+    padding: 1%;
+}
+
+.notice i {
+    font-size: xxx-large;
+    float: left;
+    margin-right: 2%;
+}

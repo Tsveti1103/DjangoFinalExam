@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Грешка{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/error-pages-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/bluebuttons-style.css' %}">
+{% endblock %}
+{% block page_content %}
+    <div class="not-found">
+        <div>
+            <h1>
+                Влизането забранено !!!
+            </h1>
+            <a href="{% url 'index' %}">
+                <button class="bluebutton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Върнете се в сайта
+                </button>
+            </a>
+        </div>
+        <div>
+            <img src="{% static 'no-dogs.png' %}" alt="403 error gif">
+        </div>
+    </div>
+{% endblock %}

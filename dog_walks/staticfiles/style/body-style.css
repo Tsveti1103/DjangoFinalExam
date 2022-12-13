@@ -1,0 +1,40 @@
+body {
+    box-sizing: inherit;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    justify-content: space-between;
+    margin: 0;
+    background-image: url("../../static/background.jpg");
+    background-position: center center;
+    background-attachment: fixed;
+    background-size:cover;
+}
+
+
+nav {
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+main {
+    min-height: 400px;
+    flex: 1;
+    display: flex;
+    flex-flow: column;
+    box-sizing: border-box;
+}
+
+footer {
+    margin-top: 10%;
+    position: relative;
+    width: 100%;
+    background: #3586ff;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

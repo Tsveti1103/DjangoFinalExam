@@ -1,0 +1,8 @@
+{% extends 'base/list_content.html' %}
+{% load static %}
+{% block title %}Места за Нощувка{% endblock %}
+{% block buttons_content %}
+    {% if request.user.is_authenticated %}
+        <a title="Детайли" href="{% url 'details night' pk=object.pk %}"><i>Детайли</i></a>
+    {% endif %}
+{% endblock %}

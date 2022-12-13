@@ -1,0 +1,28 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Грешка{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/error-pages-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/bluebuttons-style.css' %}">
+{% endblock %}
+{% block page_content %}
+    <div class="not-found">
+        <div>
+            <h1>
+                В момента нямаме това, което търсите.
+            </h1>
+            <a href="{% url 'index' %}">
+                <button class="bluebutton">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Върнете се в сайта
+                </button>
+            </a>
+        </div>
+        <div>
+            <img src="{% static 'empty.jpg' %}" alt="404 not found gif">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/forms-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/bluebuttons-style.css' %}">
+{% endblock %}
+{% block title %}Влез в системата{% endblock %}
+{% block page_content %}
+    <div class="form-content">
+        <h2>Вход</h2>
+        <form novalidate method="post" action="{% url 'login user' %}">
+            {% csrf_token %}
+            {% for field in form %}
+                <div style="margin-bottom: 30px;">
+                    {{ field.errors }}
+                </div>
+                <div class="user-box">
+                    {{ field }}
+                    <label>{{ field.label }}</label>
+                </div>
+            {% endfor %}
+            <button class="bluebutton" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Вход
+            </button>
+            {#        TODO reset password#}
+            {#            <a href="{% url 'reset password' %}"><i>Forgot Password?</i></a>#}
+        </form>
+    </div>
+    <div class="form-content">
+        <p class="other-option">Нямате акаунт?
+            <a href="{% url 'register user' %}">
+                Регистрация
+            </a>
+        </p>
+    </div>
+{% endblock %}

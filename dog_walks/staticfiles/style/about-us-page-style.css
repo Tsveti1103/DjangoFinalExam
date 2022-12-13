@@ -1,0 +1,48 @@
+h1 {
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.about img {
+    border-radius: 150px;
+}
+
+#firstimg {
+    width: 40%;
+    float: left;
+}
+
+#firstp {
+    width: 40%;
+    margin-left: 45%;
+    text-align: left;
+    font-size: 25px;
+}
+
+#secondimg {
+    width: 30%;
+    border-style: dashed;
+    float: right;
+}
+
+#secondp {
+    width: 40%;
+    text-align: right;
+    font-size: 25px;
+    float: left;
+    margin-top: 9%;
+    margin-left: 24%;
+}
+
+#thirdimg {
+    width: 40%;
+    float: left;
+}
+
+#thirdp {
+    width: 40%;
+    margin-left: 45%;
+    text-align: left;
+    font-size: 25px;
+    margin-top: 10%;
+}

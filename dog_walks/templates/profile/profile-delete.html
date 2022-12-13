@@ -1,0 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static '/style/delete-page-style.css' %}">
+<title>Изтриване на профила</title>
+{% block page_content %}
+    <section class="delete-box">
+        <h1>Сигурни ли сте, че искате да изтриете профила си?</h1>
+        <form method="post" action="{% url 'delete user' pk=request.user.pk %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <button type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Да
+            </button>
+            <a href="javascript:history.back()">Не
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </form>
+    </section>
+{% endblock %}

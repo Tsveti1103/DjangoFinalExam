@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Кучешки живот{% endblock %}
+{% block page_content %}
+    <h1 style="text-align:center">Опознай България с твоя най-добър приятел!</h1>
+    <video style="margin-top:5%" autoplay muted loop poster='{% static 'poster.jpg' %}'>
+        <source src="{% static 'Bulgaria 8K_compressed.mp4' %}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+{% endblock %}
