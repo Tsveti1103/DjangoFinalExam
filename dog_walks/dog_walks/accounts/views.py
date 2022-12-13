@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.views import PasswordChangeView, PasswordResetView
+from django.contrib.auth.views import PasswordChangeView
 from django.shortcuts import render
 from django.contrib.messages.views import SuccessMessageMixin
 from django.contrib.auth import views as auth_views, login
@@ -23,15 +23,6 @@ class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):
     success_url = reverse_lazy('index')
 
 
-class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
-    template_name = 'profile/reset_password.html'
-    email_template_name = 'profile/password_reset_email.html'
-    subject_template_name = 'profile/password_reset_subject'
-    success_message = "Изпратихме ви по имейл инструкции за задаване на вашата парола, " \
-                      "ако съществува акаунт с имейла, който сте въвели. Трябва да ги получите скоро." \
-                      "Ако не получите имейл, " \
-                      "моля, уверете се, че сте въвели адреса, с който сте се регистрирали, и проверете папката си със спам."
-    success_url = reverse_lazy('index')
 
 
 class UserRegisterView(SuccessMessageMixin, views.CreateView):
