@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    {% block extra_styles %}{% endblock %}
+    <script src="https://kit.fontawesome.com/d78bf5064b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static '/style/nav-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/button-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/search-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/body-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/footer-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/success-messages-style.css' %}">
+</head>
+<body>
+<header>
+    <nav>
+        <ul class="topnav" id="myTopnav">
+            <li>
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'logo3.jpg' %}" alt="Logo" width="30" height="24">
+                    Кучешки живот
+                </a>
+            </li>
+            <li class="behidden">
+                <a href="{% url 'all places to sleep' %}">Нощувка</a>
+            </li>
+            <li class="behidden">
+                <a href="{% url 'all places to eat' %}">Храна</a>
+            </li>
+            <li class="behidden">
+                <a href="{% url 'all places to walk' %}">Разходка</a>
+            </li>
+            <li class="behidden">
+                <a href="{% url 'map' %}">Карта</a>
+            </li>
+            {% if request.user.is_authenticated %}
+                <li class="dropdown behidden">
+                    <a href="javascript:void(0)" class="dropa">
+                        <i class="fa-solid fa-circle-plus" style="font-size: xx-large; color:forestgreen"></i>
+                        Добави
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'create place to sleep' %}">Нощувки</a>
+                        <a href="{% url 'create place to eat' %}">Храна</a>
+                        <a href="{% url 'create place to walk' %}">Разходка</a>
+                    </div>
+                </li>
+                <li class="dropdown behidden">
+                    <a href="javascript:void(0)" class="dropa">
+                        <i class="fa-regular fa-user" style="font-size: xx-large"></i>
+                        Профил
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="{% url 'details user' pk=request.user.pk %}">Моят профил</a>
+                        <a href="{% url 'user places' pk=request.user.pk %}">Мойте места</a>
+                        <a href="{% url 'user want to visit places' pk=request.user.pk %}">Искам да посетя</a>
+                        <a href="{% url 'user liked places' pk=request.user.pk %}">Любими</a>
+                        <a href="{% url 'logout user' %}" style="font-weight: bold;">Изход</a>
+                    </div>
+                </li>
+            {% else %}
+                <li class="behidden">
+                    <a class="blue-btn"
+                       href="{% url 'login user' %}">Вход</a>
+                </li>
+                <li class="behidden">
+                    <a class="blue-btn" href="{% url 'register user' %}"
+                    >Регистрация</a>
+                </li>
+            {% endif %}
+            <li>
+            <li class="behidden">
+                <form class="searchBox" action="{% url 'search_results' %}" method="get">
+                    <input class="searchInput" type="text" name="query" placeholder="Търси по име...">
+                    <button class="searchButton">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </form>
+
+            </li>
+            <li class="icon">
+                <a href="javascript:void(0)" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main>
+
+    {% if messages %}
+        <div class="alert-success">
+            {% for m in messages %}
+                <div id="alertDiv">{{ m }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% block page_content %}
+    {% endblock %}
+</main>
+<footer id="footer">
+    <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="menu">
+        <li class="menu__item"><a class="menu__link" href="{% url 'about us' %}">За Кучешки живот</a></li>
+        <li class="menu__item"><a class="menu__link" href="{% url 'terms and conditions' %}">Общи условия</a></li>
+        <li class="menu__item"><a class="menu__link" href="{% url 'contact us' %}">Контакти</a></li>
+    </ul>
+    <p>&copy;2022 Tsvetelina Stoyanova | All Rights Reserved</p>
+</footer>
+<script>
+    function myFunction() {
+        let x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+
+    const target = document.getElementById("alertDiv");
+    window.onload = setInterval(() => target.style.opacity = '0', 5000)
+</script>
+</body>
+
+</html>

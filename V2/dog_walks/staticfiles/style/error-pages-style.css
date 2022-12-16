@@ -1,0 +1,14 @@
+
+img {
+    width: 50%;
+}
+
+.not-found {
+    position: relative;
+    width: fit-content;
+    text-align: center;
+}
+
+.not-found div {
+    margin-bottom: 20px;
+}

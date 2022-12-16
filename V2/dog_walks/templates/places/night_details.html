@@ -1,0 +1,103 @@
+{% extends 'base/places_comments.html' %}
+{% block title %}Детайли{% endblock %}
+{% block content %}
+    <div class="page-container">
+        <div class="place-details">
+            <h1>{{ object.name }}</h1>
+            <ul>
+                <li>
+                    <strong>Област</strong>
+                    <span>{{ object.get_district_display }}</span>
+                </li>
+                <li>
+                    <strong>Населено място</strong>
+                    <span>{{ object.city }}</span>
+                </li>
+                <li>
+                    <strong>Вид</strong>
+                    <span>{{ object.get_type_display }}</span>
+                </li>
+                <li>
+                    <strong>Ценови диапазон</strong>
+                    <span>{{ object.get_price_display }}</span>
+                </li>
+                <li>
+                    <strong>Брой легла</strong>
+                    <span>{{ object.beds_count }}</span>
+                </li>
+                <li>
+                    <strong>Телефон</strong>
+                    <span>{{ object.phone }}</span>
+                </li>
+                <li>
+                    <strong>Уебсайт</strong>
+                    {% if object.website %}
+                        <span>
+                        <a href="{{ object.website }}" rel="nofollow" target="_blank">
+                            {{ object.website }}
+                        </a>
+                        </span>
+                    {% else %}
+                        <span>-</span>
+                    {% endif %}
+                </li>
+                <li>
+                    <strong>Допълнително заплащане за куче</strong>
+                    {% if object.dog_fee %}
+                        <span>Да</span>
+                    {% else %}
+                        <span>Не</span>
+                    {% endif %}
+                </li>
+                <li>
+                    <strong>Последна редакция</strong>
+                    <span>{{ object.modified_date }}</span>
+                </li>
+            </ul>
+            <img alt="{{ object.name }}" src="{{ object.image.url }}">
+        </div>
+        <div class="place-description">
+            <h2>Описание</h2>
+            <p> {{ object.description }}</p>
+            <p class="likes">Любимо място на {{ likes_count }} потребителя</p>
+        </div>
+        <div class="buttons-container">
+            <a title="Сподели" href="{% url 'share' %}"><i class="fa-solid fa-share-nodes"></i></a>
+            {% if is_owner %}
+                <a title="Редактирай" href="{% url 'edit night' pk=object.pk %}"><i class="fa-solid fa-pencil"></i></a>
+            {% else %}
+                <a title="Докладвай за грешки" href="{% url 'report night' pk=object.pk %}"><i
+                        class="fa-solid fa-flag"></i></a>
+                {% if is_user_want_to_visit_place %}
+                    <a title="Премахни от Искам да посетя" href="{% url 'want to visit night' pk=object.pk %}">
+                        <i style="font-weight: 600; color:#3586ff" class="fa-solid fa-star"></i>
+                    </a>
+                {% else %}
+                    <a title="Добави в Искам да посетя" href="{% url 'want to visit night' pk=object.pk %}">
+                        <i class="fa-solid fa-star"></i>
+                    </a>
+                {% endif %}
+            {% endif %}
+            {% if is_user_liked_night %}
+                <a title="Премахни от Любими" href="{% url 'like night' pk=object.pk %}">
+                    <i style="font-weight: 600" class="fa-regular fa-heart"></i>
+                </a>
+            {% else %}
+                <a title="Добави в Любими" href="{% url 'like night' pk=object.pk %}">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block from_url %}
+    {% if request.user.profile.have_permission_to_comment %}
+        <form method="post" action="{% url 'comment night' pk=object.pk %}">
+            {{ comment_form }}
+            <button type="submit">Изпрати</button>
+            {% csrf_token %}
+        </form>
+    {% else %}
+        <p style="color:red; font-size:20px">Нямате право да коментирате!</p>
+    {% endif %}
+{% endblock %}

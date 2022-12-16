@@ -1,0 +1,21 @@
+.pagin {
+    text-align: center;
+    font-size: 20px
+}
+
+.pagin a {
+    text-decoration: none;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.pagin a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+
+.pagin a:hover {
+    text-decoration: none;
+    color: #3586ff;
+
+}

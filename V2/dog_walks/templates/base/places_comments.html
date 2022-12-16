@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/places-details-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/pagination-style.css' %}">
+{% endblock %}
+{% block page_content %}
+    {% block content %}{% endblock %}
+    <div class="comments">
+        <ul>
+            {% for comment in comments %}
+                <li>
+                    <div class="profile-data">
+                        {% if comment.user.profile.profile_image %}
+                            <img alt="Profile pic" src="{{ comment.user.profile.profile_image.url }}">
+                        {% else %}
+                            <img alt="Profile pic" class="photo" src="{% static 'default_user.jpg' %}"/>
+                        {% endif %}
+                        <p class="comment-username">{{ comment.user.profile.username }}</p>
+                        <p class="comment-text">{{ comment.text }}
+                            <br>
+                            <br>
+                            <span>{{ comment.publication_date_and_time }}</span>
+                        </p>
+                    </div>
+                </li>
+            {% empty %}
+                <p>Няма коментари</p>
+            {% endfor %}
+            <div class="pagin">
+                {% if comments.has_previous %}
+                    <a href="?page=1">1</a>
+                    <a href="?page={{ comments.previous_page_number }}"><<</a>
+                {% endif %}
+
+                {{ comments.number }} / {{ comments.paginator.num_pages }}.
+
+                {% if comments.has_next %}
+                    <a href="?page={{ comments.next_page_number }}">>></a>
+                    <a href="?page={{ comments.paginator.num_pages }}">{{ comments.paginator.num_pages }}</a>
+                {% endif %}
+            </div>
+        </ul>
+    </div>
+    {% if request.user.profile.username %}
+        <div class="addComments">
+            {% block from_url %}{% endblock %}
+        </div>
+    {% else %}
+        <p style="text-align:center; font-size:25px">За да коментирате моля допълнете профила си от
+            <a style="color:red" href="{% url 'edit user' pk=request.user.pk %}">тук</a>
+        </p>
+
+    {% endif %}
+    <div class="notice">
+        <i style=" font-size: xxx-large" class="fa-solid fa-triangle-exclamation"></i>
+        <p>Моля, имайте предвид, че данните са неофициални, може да съдържат неточности и са
+            предназначени за спомагателно, а не основно средство за ориентация при избор или провеждане на преход
+            или екскурзия!</p>
+    </div>
+{% endblock %}
