@@ -1,0 +1,13 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% load cache %}
+{% block title %}Кучешки живот{% endblock %}
+{% block page_content %}
+    {% cache None video %}
+        <h1 style="text-align:center">Опознай България с твоя най-добър приятел!</h1>
+        <video style="margin-top:5%" autoplay muted loop >
+            <source src="{% static 'Bulgaria 8K_compressed.mp4' %}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    {% endcache %}
+{% endblock %}

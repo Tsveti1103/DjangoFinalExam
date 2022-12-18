@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="cb10b9f2-296d-4f36-a5ed-563eefc55818" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="Setup Script" />
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectId" id="2GtcsCqQYUXu9syCrGX7GukMpwg" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tsveti/Desktop/dog_walks/envs/ .env&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\dog_walks\tests\accounts" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\dog_walks\tests\accounts\views" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\dog_walks" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\dog_walks\common" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\dog_walks\core" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\dog_walks\envs" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\dog_walks\tests\accounts\views" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\templates" />
+      <recent name="C:\Users\Tsveti\Desktop\dog_walks\templates\profile\errors" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dog_walks" type="Python.DjangoServer" factoryName="Django server">
+      <module name="dog_walks" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="dog_walks.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Tsveti\Desktop\dog_walks\venv\Scripts\python.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="true" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+          <ENTRY IS_ENABLED="true" PARSER="env" IS_EXECUTABLE="false" PATH="envs/ .env" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="cb10b9f2-296d-4f36-a5ed-563eefc55818" name="Changes" comment="" />
+      <created>1667211525630</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667211525630</updated>
+      <workItem from="1667211540312" duration="6981000" />
+      <workItem from="1667306242157" duration="5630000" />
+      <workItem from="1667318521124" duration="912000" />
+      <workItem from="1667375175657" duration="20335000" />
+      <workItem from="1667464458815" duration="9323000" />
+      <workItem from="1667549068854" duration="19699000" />
+      <workItem from="1667633335276" duration="5501000" />
+      <workItem from="1667734396083" duration="44000" />
+      <workItem from="1667734490700" duration="9720000" />
+      <workItem from="1667808664292" duration="8372000" />
+      <workItem from="1667819176794" duration="11020000" />
+      <workItem from="1667910210233" duration="6954000" />
+      <workItem from="1667985718530" duration="13607000" />
+      <workItem from="1668082920267" duration="2216000" />
+      <workItem from="1668326770116" duration="13282000" />
+      <workItem from="1668427217018" duration="6030000" />
+      <workItem from="1668504858203" duration="17584000" />
+      <workItem from="1668526960757" duration="3041000" />
+      <workItem from="1668533080706" duration="725000" />
+      <workItem from="1668595871991" duration="11073000" />
+      <workItem from="1668674829055" duration="21754000" />
+      <workItem from="1668758257216" duration="19102000" />
+      <workItem from="1668928597662" duration="13396000" />
+      <workItem from="1668959049421" duration="5277000" />
+      <workItem from="1669021662302" duration="13434000" />
+      <workItem from="1669047120040" duration="4585000" />
+      <workItem from="1669102874762" duration="18736000" />
+      <workItem from="1669281362681" duration="15993000" />
+      <workItem from="1669359792522" duration="21100000" />
+      <workItem from="1669476072720" duration="6215000" />
+      <workItem from="1669542117959" duration="6370000" />
+      <workItem from="1669629333958" duration="15419000" />
+      <workItem from="1669702264628" duration="1027000" />
+      <workItem from="1669703370027" duration="25439000" />
+      <workItem from="1669799363364" duration="17758000" />
+      <workItem from="1669884283140" duration="27441000" />
+      <workItem from="1669961125984" duration="27451000" />
+      <workItem from="1669999080864" duration="788000" />
+      <workItem from="1670225986034" duration="22440000" />
+      <workItem from="1670307736600" duration="26733000" />
+      <workItem from="1670394649360" duration="29621000" />
+      <workItem from="1670481361151" duration="2705000" />
+      <workItem from="1670484094671" duration="21965000" />
+      <workItem from="1670568400506" duration="1936000" />
+      <workItem from="1670570367158" duration="24182000" />
+      <workItem from="1670656321123" duration="23998000" />
+      <workItem from="1670700464907" duration="593000" />
+      <workItem from="1670745631577" duration="15025000" />
+      <workItem from="1670761543480" duration="1331000" />
+      <workItem from="1670762903059" duration="2691000" />
+      <workItem from="1670823272185" duration="24651000" />
+      <workItem from="1670849194242" duration="673000" />
+      <workItem from="1670850384907" duration="101000" />
+      <workItem from="1670850761073" duration="33000" />
+      <workItem from="1670850821471" duration="196000" />
+      <workItem from="1670851250919" duration="1058000" />
+      <workItem from="1670852332034" duration="284000" />
+      <workItem from="1670856658381" duration="580000" />
+      <workItem from="1670857613914" duration="3729000" />
+      <workItem from="1670861395485" duration="2840000" />
+      <workItem from="1670865135633" duration="1068000" />
+      <workItem from="1670866228481" duration="549000" />
+      <workItem from="1670868030346" duration="642000" />
+      <workItem from="1670911720677" duration="2816000" />
+      <workItem from="1670917540191" duration="220000" />
+      <workItem from="1670919027050" duration="33000" />
+      <workItem from="1670921853727" duration="9537000" />
+      <workItem from="1670936424554" duration="1120000" />
+      <workItem from="1671002888516" duration="10128000" />
+      <workItem from="1671018803099" duration="8725000" />
+      <workItem from="1671030359670" duration="2545000" />
+      <workItem from="1671085340069" duration="24986000" />
+      <workItem from="1671120545116" duration="1363000" />
+      <workItem from="1671121929191" duration="1753000" />
+      <workItem from="1671126887482" duration="704000" />
+      <workItem from="1671178397024" duration="428000" />
+      <workItem from="1671178844661" duration="37000" />
+      <workItem from="1671178902012" duration="996000" />
+      <workItem from="1671180017950" duration="715000" />
+      <workItem from="1671186667913" duration="1526000" />
+      <workItem from="1671193459340" duration="2000" />
+      <workItem from="1671221330449" duration="444000" />
+      <workItem from="1671267577265" duration="18000" />
+      <workItem from="1671272655165" duration="564000" />
+      <workItem from="1671303477578" duration="2121000" />
+      <workItem from="1671351004190" duration="219000" />
+      <workItem from="1671354756582" duration="6793000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/dog_life/tests/accounts/views/sign_up_view_tests.py</url>
+          <line>27</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Python.DjangoServer">
+        <watch expression="object" />
+        <watch expression="object" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/dog_walks$.coverage" NAME=" Coverage Results" MODIFIED="1670758063061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/dog_walks/tests/validators" />
+    <SUITE FILE_PATH="coverage/dog_walks$Test__dog_walks_tests_accounts_views_sign_up_view_tests_SignUpViewTests.coverage" NAME="Test: dog_walks.tests.accounts.views.sign_up_view_tests.SignUpViewTests Coverage Results" MODIFIED="1670748447727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/dog_walks$Test__dog_walks_tests_accounts_sign_up_view_tests_SignUpViewTests.coverage" NAME="Test: dog_walks.tests.accounts.sign_up_view_tests.SignUpViewTests Coverage Results" MODIFIED="1670753333294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/dog_walks$Test__dog_walks_tests_accounts_views_sign_up_view_tests_SignUpViewTests_test_sign_up__when_valid_data__expect_logged_in_user.coverage" NAME="Test: dog_walks.tests.accounts.views.sign_up_view_tests.SignUpViewTests.test_sign_up__when_valid_data__expect_logged_in_user Coverage Results" MODIFIED="1670756398264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/dog_walks$Test__dog_walks_tests_accounts_sign_up_view_tests_SignUpViewTests_test_sign_up__when_valid_data__expect_logged_in_user.coverage" NAME="Test: dog_walks.tests.accounts.sign_up_view_tests.SignUpViewTests.test_sign_up__when_valid_data__expect_logged_in_user Coverage Results" MODIFIED="1670753795598" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+  </component>
+</project>

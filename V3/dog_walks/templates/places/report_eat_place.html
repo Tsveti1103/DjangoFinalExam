@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Предложи промяна{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/forms-style.css' %}">
+{% endblock %}
+{% block page_content %}
+    <div class="form-content">
+        <h2>Предложи промяна в мястото за хапване</h2>
+        <form method="post" action="{% url 'report eat' pk=object_pk %}">
+            {% csrf_token %}
+            {% for field in form %}
+                <div style="margin-bottom: 30px;">
+                    {{ field.errors }}
+                </div>
+                <div class="user-box">
+                    {{ field }}
+                    <label>{{ field.label }}</label>
+                </div>
+            {% endfor %}
+            <button type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Създай
+            </button>
+        </form>
+    </div>
+{% endblock %}

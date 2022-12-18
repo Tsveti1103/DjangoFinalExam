@@ -1,0 +1,80 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/profile-page-style.css' %}">
+{% endblock %}
+{% block title %}Профил{% endblock %}
+{% block page_content %}
+    <div class="profile-container">
+        <div class="image">
+            <a href="{% url 'edit user' pk=request.user.pk %}" class="edit-icon">
+                <i class="fa-solid fa-user-pen" title="edit"></i>
+            </a>
+            {% if profile_image %}
+                <img alt="Profile pic" class="photo" src="{{ profile_image.url }}"/>
+            {% else %}
+                <img alt="Profile pic" class="photo" src="{% static 'default_user.jpg' %}"/>
+            {% endif %}
+            <a href="{% url 'delete user' pk=request.user.pk %}" class="delete-icon">
+                <i class="fa-solid fa-trash-can" title="delete"></i>
+            </a>
+        </div>
+        <ul class="nav-2" id="nav-2">
+            <li class="behidden"><a href="{% url 'user places' pk=request.user.pk %}">Мойте места</a></li>
+            <li class="behidden"><a href="{% url 'user places for approval' pk=request.user.pk %}">Изчакващи
+                одобрение</a></li>
+            <li class="behidden"><a href="{% url 'user want to visit places' pk=request.user.pk %}">Искам да посетя</a>
+            </li>
+            <li class="behidden"><a href="{% url 'user liked places' pk=request.user.pk %}">Любими места</a></li>
+            <li class="icon">
+                <a href="javascript:void(0)" onclick="navFunction()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </li>
+            <li>
+                <a style="color:red" href="{% url 'password change' %}">Промяна на паролата</a>
+            </li>
+        </ul>
+
+        {% if username and dog_name and residence %}
+            <div class="user-info">
+                <p class="info-title">Потребителско име :</p>
+                <p class="info-value">{{ username }}</p>
+                <p class="info-title">Най-добър приятел :</p>
+                <p class="info-value">{{ dog_name }}</p>
+                <p class="info-title">Местожителство :</p>
+                <p class="info-value">{{ residence }}</p>
+                <p class="info-title">Имейл :</p>
+                <p class="info-value">{{ request.user.email }}</p>
+            </div>
+            <div class="stats row">
+                <div class="stat" style="padding-right: 50px;">
+                    <p class="number-stat">{{ all_liked_objects }}</p>
+                    <p class="desc-stat">Харесани места</p>
+                </div>
+                <div class="stat">
+                    <p class="number-stat">{{ all_created_objects }}</p>
+                    <p class="desc-stat">Създадени места</p>
+                </div>
+                <div class="stat" style="padding-left: 50px;">
+                    <p class="number-stat">{{ all_want_to_visit_objects }}</p>
+                    <p class="desc-stat">Бъдещи места</p>
+                </div>
+            </div>
+        {% else %}
+            <h2> Моля допълете профила си от
+                <a style="color:red" href="{% url 'edit user' pk=request.user.pk %}">Тук</a>
+            </h2>
+        {% endif %}
+    </div>
+    <script>
+        function navFunction() {
+            let x = document.getElementById("nav-2");
+            if (x.className === "nav-2") {
+                x.className += " responsive";
+            } else {
+                x.className = "nav-2";
+            }
+        }
+    </script>
+{% endblock %}

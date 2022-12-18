@@ -1,0 +1,152 @@
+.user-box textarea {
+    margin-top: 35px;
+    height: 5em;
+    width: 23em;
+}
+
+input[type="checkbox"] {
+    height: 30px;
+    width: 20px;
+    margin-left: 10%;
+}
+
+input[type="checkbox"] + label {
+    margin-top: 7%;
+}
+
+#id_image {
+    margin-top: 25px;
+    padding-left: 50px;
+}
+
+#id_type, #id_dogs_are_welcome, #id_price, #id_difficulty, #id_district {
+    background: black;
+    border-radius: 4px;
+    margin-top: 50px;
+    margin-left: 5px;
+    padding-left: 5%;
+}
+
+.errorlist {
+    color: red;
+    padding: 0;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    list-style-type: none;
+
+}
+
+
+.form-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 20px;
+    transform: translate(-50%, 0%);
+    background: black;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .form-content {
+        margin-bottom: 10%;
+    }
+}
+
+.form-content h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #03e9f4;
+    text-align: center;
+}
+
+.form-content .user-box {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.form-content .user-box input,
+.form-content .user-box select {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #03e9f4;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #03e9f4;
+    outline: none;
+    background: transparent;
+}
+
+.form-content .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: red;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.form-content .user-box input:focus ~ label,
+.form-content .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.form-content .user-box select:valid ~ label,
+.form-content .user-box textarea:valid ~ label,
+.form-content .user-box textarea:focus ~ label {
+    color: #03e9f4;
+    font-size: 12px;
+}
+
+.form-content .other-option {
+    color: white;
+    font-size: 20px;
+}
+
+.form-content .other-option a {
+    color: #03e9f4;
+    padding-left: 5%;
+    text-decoration: none;
+}
+
+#read-rules {
+    text-align: center
+}
+
+#read-rules h2 {
+    color: red;
+}
+
+#read-rules a {
+    text-decoration: none;
+    color: #3586ff;
+    padding: 5px;
+}
+
+#read-rules a:hover {
+    color: black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #3586ff,
+    0 0 20px #3586ff,
+    0 0 20px #3586ff,
+    0 0 20px #3586ff;
+}
+
+#id_captcha {
+    margin-left: 8%;
+}
+
+#id_captcha + label {
+    display: none;
+}

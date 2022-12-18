@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Неодобрени места{% endblock %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/object-card-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/pagination-style.css' %}">
+{% endblock %}
+{% block page_content %}
+    <div class="list-content">
+        <ul class="nights-ul">
+            {% for object in places %}
+                <li>
+                    <div class="container">
+                        <div class="card">
+                            <div class="imgBx">
+                                {% if object.image %}
+                                    <img alt="{{ object.name }}" src="{{ object.image.url }}">
+                                {% else %}
+                                    <img alt="{{ object.name }}"
+                                         src="https://www.bhg.com/thmb/3Vf9GXp3T-adDlU6tKpTbb-AEyE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg">
+                                {% endif %}
+                            </div>
+                            <div class="contentBx">
+                                <h2>{{ object.name }}</h2>
+                                <div class="size">
+                                    <p>{{ object.description|truncatewords:30 }}...</p>
+                                </div>
+                                <div>
+                                    {% if object.PLACE_TYPE == 'night' %}
+                                        <a title="Детайли" href="{% url 'details night' pk=object.pk %}"><i>Детайли</i></a>
+                                    {% elif object.PLACE_TYPE == 'eat' %}
+                                        <a title="Детайли"
+                                           href="{% url 'details eat' pk=object.pk %}"><i>Детайли</i></a>
+                                    {% elif object.PLACE_TYPE == 'walk' %}
+                                        <a title="Детайли"
+                                           href="{% url 'details walk' pk=object.pk %}"><i>Детайли</i></a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% empty %}
+                <li>Няма обекти за показване</li>
+            {% endfor %}
+            <div class="pagin">
+                {% if places.has_previous %}
+                    <a href="?page=1">1</a>
+                    <a href="?page={{ places.previous_page_number }}"><<</a>
+                {% endif %}
+                {{ places.number }} / {{ places.paginator.num_pages }}.
+                {% if places.has_next %}
+                    <a href="?page={{ places.next_page_number }}">>></a>
+                    <a href="?page={{ places.paginator.num_pages }}">{{ places.paginator.num_pages }}</a>
+                {% endif %}
+            </div>
+        </ul>
+    </div>
+{% endblock %}

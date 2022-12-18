@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block extra_styles %}
+    <link rel="stylesheet" href="{% static '/style/forms-style.css' %}">
+    <link rel="stylesheet" href="{% static '/style/bluebuttons-style.css' %}">
+{% endblock %}
+{% block title %}Регистрация{% endblock %}
+{% block page_content %}
+    <div class="form-content">
+        <h2>Регистрация</h2>
+        <form novalidate method="post" action="{% url 'register user' %}">
+            {% csrf_token %}
+            {% for field in form %}
+                <div style="margin-bottom: 30px;">
+                    {{ field.errors }}
+                    {{ field.errors.type }}
+                </div>
+                <div class="user-box">
+                    {{ field }}
+                    <label style="margin-top:0" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                </div>
+            {% endfor %}
+            <a style="text-decoration: none; color:#03e9f4" href="{% url 'terms and conditions' %}" target='_blank'>Общи условия и
+                правила за ползване на сайта</a>
+            <button class="bluebutton" type="submit">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Регистрация
+            </button>
+        </form>
+    </div>
+    <div class="form-content">
+        <p class="other-option">Вече имате акаунт?
+            <a href="{% url 'login user' %}">
+                Вход
+            </a>
+        </p>
+    </div>
+{% endblock %}
+

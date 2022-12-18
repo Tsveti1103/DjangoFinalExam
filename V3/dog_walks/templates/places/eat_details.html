@@ -1,0 +1,92 @@
+{% extends 'base/places_comments.html' %}
+{% block title %}Детайли{% endblock %}
+{% block content %}
+    <div class="page-container">
+        <div class="place-details">
+            <h1>{{ object.name }}</h1>
+            <ul>
+                <li>
+                    <strong>Област</strong>
+                    <span>{{ object.get_district_display }}</span>
+                </li>
+                <li>
+                    <strong>Населено място</strong>
+                    <span>{{ object.city }}</span>
+                </li>
+                <li>
+                    <strong>Вид</strong>
+                    <span>{{ object.get_type_display }}</span>
+                </li>
+                <li>
+                    <strong>Ценови диапазон</strong>
+                    <span>{{ object.get_price_display }}</span>
+                </li>
+                <li>
+                    <strong>Телефон</strong>
+                    {% if object.phone %}
+                        <span>{{ object.phone }}</span>
+                    {% else %}
+                        <span>-</span>
+                    {% endif %}
+                </li>
+                <li>
+                    <strong>Уебсайт</strong>
+                    {% if object.website %}
+                        <span>
+                        <a href="{{ object.website }}" rel="nofollow" target="_blank">
+                            {{ object.website }}
+                        </a>
+                        </span>
+                    {% else %}
+                        <span>-</span>
+                    {% endif %}
+                </li>
+            </ul>
+            <img alt="{{ object.name }}" src="{{ object.image.url }}">
+        </div>
+        <div class="place-description">
+            <h2>Описание</h2>
+            <p> {{ object.description }}</p>
+            <p class="likes">Любимо място на {{ likes_count }} потребителя</p>
+
+        </div>
+        <div class="buttons-container">
+            <a title="Сподели" href="{% url 'share' %}"><i class="fa-solid fa-share-nodes"></i></a>
+            {% if is_owner %}
+                <a title="Редактирай" href="{% url 'edit eat' pk=object.pk %}"><i class="fa-solid fa-pencil"></i></a>
+            {% else %}
+                <a title="Докладвай за грешки" href="{% url 'report eat' pk=object.pk %}"><i
+                        class="fa-solid fa-flag"></i></a>
+                {% if is_user_want_to_visit_place %}
+                    <a title="Премахни от Искам да посетя" href="{% url 'want to visit eat' pk=object.pk %}">
+                        <i style="font-weight: 600; color:#3586ff" class="fa-solid fa-paw"></i>
+                    </a>
+                {% else %}
+                    <a title="Добави в Искам да посетя" href="{% url 'want to visit eat' pk=object.pk %}">
+                        <i class="fa-solid fa-paw"></i>
+                    </a>
+                {% endif %}
+            {% endif %}
+            {% if is_user_liked_eat %}
+                <a title="Премахни от Любими" href="{% url 'like eat' pk=object.pk %}">
+                    <i style="font-weight: 600" class="fa-regular fa-heart"></i>
+                </a>
+            {% else %}
+                <a title="Добави в Любими" href="{% url 'like eat' pk=object.pk %}">
+                    <i class="fa-regular fa-heart"></i>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+{% block from_url %}
+    {% if request.user.have_permission_to_comment %}
+        <form method="post" action="{% url 'comment eat' pk=object.pk %}">
+            {{ comment_form }}
+            <button type="submit">Изпрати</button>
+            {% csrf_token %}
+        </form>
+    {% else %}
+        <p style="color:red; font-size:20px">Нямате право да коментирате!</p>
+    {% endif %}
+{% endblock %}

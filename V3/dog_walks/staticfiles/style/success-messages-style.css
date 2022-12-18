@@ -1,0 +1,10 @@
+.alert-success {
+    font-size: 40px;
+    color: lightgreen;
+    width: 60%;
+    padding: 7px;
+    border-radius: 5px;
+    position: relative;
+    left: 20%;
+    text-align: center;
+}
